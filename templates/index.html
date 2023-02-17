@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+<!-- {% load static %} -->
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+ <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+    <h1 class="text-center">Departments</h1>
+<div class="container" align="center" style="padding-top:15px;">
+            {% for i in dep %}
+<div class="card mb-3" align="center" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{i.img.url}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{i.dep_name}}</h5>
+        <p class="card-text">{{i.dep_descrip}}.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+Doctors
+{% endblock %}
+{% block content %}
+<h1 class="text-center">Doctors</h1>
+<div class="container">
+{% for i in doctors %}
+
+<div class="card text-center" style="width: 17rem; display:inline-block ">
+  <img src="{{i.img.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+      <h1 class="card-title">Dr. {{i.name}}</h1>
+    <p class="card-text">{{i.dep_name}}</p>
+      <a  class="btn btn-outline-primary" href="{% url 'booking' %}">Book Now</a>
+  </div>
+</div>
+<!--<img src="{{i.img.url}}" height="200px" width="200px" >-->
+<!--<h1></h1>-->
+<!--<p></p>-->
+{% endfor %}
+</div>
+{% endblock %}
